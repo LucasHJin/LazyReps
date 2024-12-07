@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+client_secret_373731951211-98rnl5em0r0m3bg0b1nobhq8l92hi2o4.apps.googleusercontent.com.json
+
+.env
