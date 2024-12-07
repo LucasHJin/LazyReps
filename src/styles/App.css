@@ -1,0 +1,7 @@
+/* All general stylings that aren't as global (for core content), i.e. general layout */
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

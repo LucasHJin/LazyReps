@@ -1,0 +1,15 @@
+/* Only global styles that affect all the code (i.e. typography, resets, etc.) */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
