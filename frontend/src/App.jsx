@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
+import '../src/styles/App.css';
 
 
 const App = () => {
@@ -77,7 +78,7 @@ const App = () => {
           console.error("Error sending frame to backend:", error.response?.data || error.message);
         }
       }
-    }, 200);
+    }, 100);
   };
 
   const drawPoseOnCanvas = (pose) => {
@@ -225,7 +226,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Arm Posture Rep Tracker</h1>
+      <h1>Lazy Reps</h1>
 
       <button 
         onClick={() => {
@@ -237,13 +238,23 @@ const App = () => {
             stopTracking();
           }
         }} 
-        style={{ zIndex: 10 }}
+        style={{
+          zIndex: 10,
+          backgroundColor: isStreaming ? '#a01210' : '#774822', 
+          color: 'white',
+          fontSize: '18px',
+          padding: '10px 20px',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+          transition: 'background-color 0.3s', 
+        }}
       >
         {isStreaming ? 'Stop Tracking' : 'Start Tracking'}
       </button>
 
 
-      <video ref={videoRef} style={{ width: '851px', height: '640px', background: 'black' }} autoPlay />
+      <video ref={videoRef} style={{ width: '851px', height: '638px', background: 'black' }} autoPlay />
 
       { /* 
       <canvas
@@ -257,9 +268,9 @@ const App = () => {
         style={{ display: 'none' }}
       />
 
-      <div>
+      <div className='stats'>
         <h3>Reps Completed: {repCount}</h3>
-        <h3>Current Elbow Angle: {currentAngle.toFixed(2)}°</h3> {/* Display current angle */}
+        <h3>Current Elbow Angle: {currentAngle.toFixed(2)}°</h3> 
       </div>
 
     </div>
